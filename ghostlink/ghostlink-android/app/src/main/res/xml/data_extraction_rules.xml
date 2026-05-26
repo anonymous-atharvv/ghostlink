@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Data extraction rules for secure storage protection -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="database" path="ghostlink.db" />
+        <exclude domain="sharedpref" path="security_prefs.xml" />
+        <exclude domain="file" path="signal_keys/" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="database" path="ghostlink.db" />
+        <exclude domain="sharedpref" path="security_prefs.xml" />
+        <exclude domain="file" path="signal_keys/" />
+    </device-transfer>
+</data-extraction-rules>

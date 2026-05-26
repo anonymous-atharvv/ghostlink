@@ -1,0 +1,17 @@
+[package]
+name = "ghostlink-media"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ghostlink-core = { path = "../ghostlink-core" }
+ghostlink-db = { path = "../ghostlink-db" }
+
+tokio.workspace = true
+reqwest.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+anyhow.workspace = true

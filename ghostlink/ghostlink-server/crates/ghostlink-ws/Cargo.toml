@@ -1,0 +1,23 @@
+[package]
+name = "ghostlink-ws"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ghostlink-core = { path = "../ghostlink-core" }
+ghostlink-db = { path = "../ghostlink-db" }
+
+axum.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+futures.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+dashmap.workspace = true
+async-nats.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+base64.workspace = true
+anyhow.workspace = true

@@ -1,0 +1,49 @@
+[package]
+name = "ghostlink-api"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "ghostlink-server"
+path = "src/main.rs"
+
+[dependencies]
+ghostlink-core = { path = "../ghostlink-core" }
+ghostlink-db = { path = "../ghostlink-db" }
+ghostlink-ws = { path = "../ghostlink-ws" }
+ghostlink-push = { path = "../ghostlink-push" }
+ghostlink-media = { path = "../ghostlink-media" }
+
+axum.workspace = true
+axum-extra.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+tower_governor.workspace = true
+governor.workspace = true
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+jsonwebtoken.workspace = true
+argon2.workspace = true
+uuid.workspace = true
+zeroize.workspace = true
+validator = { workspace = true, features = ["derive"] }
+regex.workspace = true
+lazy_static.workspace = true
+chrono.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tracing-opentelemetry.workspace = true
+opentelemetry.workspace = true
+opentelemetry_sdk.workspace = true
+opentelemetry-otlp.workspace = true
+metrics.workspace = true
+metrics-exporter-prometheus.workspace = true
+async-nats.workspace = true
+dotenvy.workspace = true
+dashmap.workspace = true
+futures.workspace = true
+base64.workspace = true
+redis.workspace = true

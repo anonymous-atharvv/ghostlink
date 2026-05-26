@@ -1,0 +1,19 @@
+[package]
+name = "ghostlink-db"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ghostlink-core = { path = "../ghostlink-core" }
+
+scylla.workspace = true
+deadpool-redis.workspace = true
+redis.workspace = true
+tokio.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

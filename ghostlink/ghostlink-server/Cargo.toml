@@ -1,0 +1,100 @@
+[workspace]
+members = [
+    "crates/ghostlink-api",
+    "crates/ghostlink-core",
+    "crates/ghostlink-db",
+    "crates/ghostlink-ws",
+    "crates/ghostlink-push",
+    "crates/ghostlink-media",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["GhostLink Team"]
+license = "AGPL-3.0"
+
+[workspace.dependencies]
+# Web framework
+axum = { version = "0.7", features = ["ws", "multipart", "macros"] }
+axum-extra = { version = "0.9", features = ["typed-header"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace", "request-id", "set-header", "limit"] }
+tower_governor = "0.4"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["io"] }
+futures = "0.3"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Database
+scylla = "0.13"
+deadpool-redis = "0.15"
+redis = { version = "0.25", features = ["tokio-comp", "connection-manager"] }
+
+# Auth & crypto
+jsonwebtoken = "8"
+argon2 = "0.5"
+uuid = { version = "1", features = ["v4", "v7", "serde"] }
+zeroize = { version = "1", features = ["derive"] }
+
+# Validation
+validator = { version = "0.18", features = ["derive"] }
+regex = "1"
+lazy_static = "1"
+
+# Rate limiting
+governor = "0.6"
+
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Error handling
+thiserror = "1"
+anyhow = "1"
+
+# Tracing / observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+tracing-opentelemetry = "0.24"
+opentelemetry = "0.23"
+opentelemetry_sdk = "0.23"
+opentelemetry-otlp = "0.16"
+metrics = "0.23"
+metrics-exporter-prometheus = "0.15"
+
+# Message bus
+async-nats = "0.35"
+
+# S3 / Object storage (using reqwest for MinIO/S3 API compatibility)
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+
+
+
+# Concurrency
+dashmap = "5"
+
+# Config
+dotenvy = "0.15"
+
+# Encoding
+base64 = "0.22"
+
+# Testing
+tokio-test = "0.4"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+opt-level = 3
+
+[profile.dev]
+opt-level = 0
+debug = true
